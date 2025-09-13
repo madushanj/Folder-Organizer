@@ -6,7 +6,7 @@ import { exec } from "child_process";
  */
 export function checkPython3Available(): Promise<boolean> {
   return new Promise((resolve) => {
-    exec("python3 --version", (error, stdout, stderr) => {
+    exec("python3 --version", (error, stdout) => {
       if (error) {
         resolve(false);
       } else {

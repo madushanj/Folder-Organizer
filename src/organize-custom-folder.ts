@@ -59,7 +59,7 @@ export default async function main() {
       .map(([category, files]) => {
         const fileCount = Array.isArray(files) ? files.length : files;
         const folderName = "'" + category + "'";
-        return `${fileCount} ${fileCount === 1 ? 'file' : 'files'} to the ${folderName} folder`;
+        return `${fileCount} ${fileCount === 1 ? "file" : "files"} to the ${folderName} folder`;
       })
       .join("\n");
 
@@ -95,8 +95,9 @@ export default async function main() {
 
     sortingToast.style = Toast.Style.Success;
     sortingToast.title = "✅ Folder organized!";
-    sortingToast.message = `Sorted ${sortResult.total_moved || 0} files into ${sortResult.categories_created?.length || 0
-      } folders`;
+    sortingToast.message = `Sorted ${sortResult.total_moved || 0} files into ${
+      sortResult.categories_created?.length || 0
+    } folders`;
 
     // Offer to open the organized folder
     const openFolder = await confirmAlert({
